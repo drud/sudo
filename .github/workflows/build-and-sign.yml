@@ -28,7 +28,14 @@ jobs:
           unzip -j osslsigncode.zip
           ./osslsigncode --version || true
       - name: Build
-        run: make darwin_amd64_signed
+        run: make windows_amd64_signed
 
       - name: Test
-        run: go test -v ./...
+        run: make test
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: sudo-executable
+          path: ".gotmp/bin/windows_amd64/sudo*.exe"
+          retention-days: 7
