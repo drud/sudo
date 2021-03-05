@@ -2,12 +2,13 @@
 
 sudo for windows
 
-[![Build status](https://ci.appveyor.com/api/projects/status/xyxiefgm9giyags3?svg=true)](https://ci.appveyor.com/project/mattn/sudo)
+Forked from https://github.com/mattn/sudo 2021-03-05 in order to make a signed build.
 
 ## Usage
 
 ```
 C:\>sudo cmd /c dir
+sudo.exe cmd /c dir
 ```
 
 Then, you'll see the UAC dialog.
