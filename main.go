@@ -4,6 +4,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"os"
 )
 
@@ -15,6 +16,10 @@ func main() {
 	flag.Parse()
 
 	args := flag.Args()
+	if flag.NArg() == 1 && args[1] == "--version" {
+		fmt.Printf("sudo.exe version %s", Version)
+	}
+
 	if mode != "" {
 		os.Exit(client(mode, args))
 	}

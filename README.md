@@ -48,17 +48,21 @@ sudo
 ## Installation
 
 ```
-go get github.com/mattn/sudo
+go get github.com/drud/sudo
+```
+or
+```bash
+make
 ```
 
-requirement go1.8 or later.
+requirement go1.16 or later.
 
-Or download from [release](https://github.com/mattn/sudo/releases) tab.
+Or download from [releases](https://github.com/drud/sudo/releases).
 
 ## License
 
 MIT
 
-## Author
+## Original Author
 
 Yasuhiro Matsumoto (a.k.a. mattn)
