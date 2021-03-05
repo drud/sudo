@@ -11,13 +11,16 @@ import (
 func main() {
 	var mode string
 	var spawn bool
+	var v bool
 	flag.StringVar(&mode, "mode", "", "mode")
 	flag.BoolVar(&spawn, "spawn", false, "spawn")
+	flag.BoolVar(&v, "version", false, "get sudo version")
 	flag.Parse()
 
 	args := flag.Args()
-	if flag.NArg() == 1 && args[1] == "--version" {
-		fmt.Printf("sudo.exe version %s", Version)
+	if v {
+		fmt.Printf("sudo version %s\n", Version)
+		os.Exit(0)
 	}
 
 	if mode != "" {

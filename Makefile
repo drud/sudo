@@ -20,7 +20,7 @@ windows_amd64: $(GOTMP)/bin/windows_amd64/sudo.exe
 windows_arm64: $(GOTMP)/bin/windows_arm64/sudo.exe
 # windows_arm64 is not yet supported in go v1.16, but will be in v1.17
 TARGETS=$(GOTMP)/bin/windows_amd64/sudo.exe $(GOTMP)/bin/windows_arm64/sudo.exe
-$(TARGETS): $(GOFILES)
+$(TARGETS): *.go
 	@echo "building $@";
 	@#echo "LDFLAGS=$(LDFLAGS)";
 	@rm -f $@
