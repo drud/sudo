@@ -27,6 +27,10 @@ jobs:
           ls -l osslsigncode.zip
           unzip -j osslsigncode.zip
           ./osslsigncode --version || true
+
+      - name: Check osslsigncode
+        run: osslsigncode --version || true
+
       - name: Build
         run: make windows_amd64_signed
 
