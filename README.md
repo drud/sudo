@@ -47,6 +47,9 @@ sudo
 
 ## Installation
 
+Download a signed binary from [releases](https://github.com/drud/sudo/releases) and place it in your PATH.
+
+## Building
 ```
 go get github.com/drud/sudo
 ```
@@ -54,10 +57,6 @@ or
 ```bash
 make
 ```
-
-requirement go1.16 or later.
-
-Or download from [releases](https://github.com/drud/sudo/releases).
 
 ## License
 
