@@ -33,7 +33,7 @@ $(TARGETS): *.go
 
 windows_amd64_signed: $(GOTMP)/bin/windows_amd64/sudo.$(VERSION).exe
 $(GOTMP)/bin/windows_amd64/sudo.$(VERSION).exe:  $(GOTMP)/bin/windows_amd64/sudo.exe
-	@if [ -z "$(DDEV_WINDOWS_SIGNING_PASSWORD)" ] ; then echo "Skipping signing, no DDEV_WINDOWS_SIGNING_PASSWORD provided"; else echo "Signing $@..." && mv $< $<.unsigned && osslsigncode sign -pkcs12 certfiles/drud_cs.p12  -n "sudo for windows" -i https://ddev.com -in $<.unsigned -out $@ -t http://timestamp.digicert.com -pass $(DDEV_WINDOWS_SIGNING_PASSWORD); fi
+	@if [ -z "$(DDEV_WINDOWS_SIGNING_PASSWORD)" ] ; then echo "Skipping signing, no DDEV_WINDOWS_SIGNING_PASSWORD provided"; else echo "Signing $@..." && mv $< $<.unsigned && osslsigncode sign -pkcs12 certfiles/drud_cs.p12  -n "sudo for windows" -i https://ddev.com -in $<.unsigned -out $@ -t http://timestamp.digicert.com -pass $(DDEV_WINDOWS_SIGNING_PASSWORD); cp $@ $(GOTMP)/bin/windows_amd64/sudo.exe; fi
 
 test:
 	go test -v ./...
