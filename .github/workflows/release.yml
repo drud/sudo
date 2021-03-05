@@ -26,6 +26,8 @@ jobs:
 
       - name: Build
         run: make windows_amd64_signed
+        env:
+          DDEV_WINDOWS_SIGNING_PASSWORD: ${{ secrets.DDEV_WINDOWS_SIGNING_PASSWORD }}
 
       - name: Test
         run: make test
